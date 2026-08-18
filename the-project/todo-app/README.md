@@ -8,4 +8,4 @@ Automatically listens on port 3000. To specify a port, create a `.env` file in t
 PORT=<port_number>
 ```
 
-Deploy with `kubectl create deployment todo-app --image=un1k0rn86/todo-app:latest`
+Deploy with `kubectl apply -f manifests/deployment.yaml`
