@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: log-output
+  name: log-output-dep
 spec:
   replicas: 1
   selector:
@@ -14,4 +14,8 @@ spec:
     spec:
       containers:
         - name: log-output
-          image: un1k0rn86/log-output
+          image: un1k0rn86/log-output:1.7
+          imagePullPolicy: Always
+          env:
+            - name: PORT
+              value: "3000"
