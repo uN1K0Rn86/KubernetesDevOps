@@ -14,4 +14,7 @@ spec:
     spec:
       containers:
         - name: todo-app
-          image: un1k0rn86/todo-app
+          image: un1k0rn86/todo-app:1.5
+          env:
+            - name: PORT
+              value: "4344"
