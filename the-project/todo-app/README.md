@@ -2,10 +2,6 @@
 
 ## Server
 
-Automatically listens on port 3000. To specify a port, create a `.env` file in the root directory with the contents
-
-```
-PORT=<port_number>
-```
+Deployment manifest configures port 4344. Use port-forward to connect.
 
 Deploy with `kubectl apply -f manifests/deployment.yaml`
