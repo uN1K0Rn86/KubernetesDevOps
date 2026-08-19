@@ -9,7 +9,7 @@ const filePath = path.join(directory, "log.txt");
 fs.mkdirSync(directory, { recursive: true });
 
 setInterval(() => {
-  const line = `${new Date().toISOString()}: ${randomString}\n`;
-  fs.appendFileSync(filePath, line);
+  const line = `${new Date().toISOString()}: ${randomString}`;
+  fs.writeFileSync(filePath, line);
   console.log(line.trim());
 }, 5000);

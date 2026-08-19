@@ -11,3 +11,5 @@ kubectl apply -f manifests
 Ingress shared with ping-pong app. Deploy ingress from repo root folder with `kubectl apply -f manifests`
 
 Access the status at `http://localhost:8081/status`
+
+As of Exercise 1.11, the status no longer displays every timestamp and instead just shows the latest one. In addition, the pong counter is now shown.

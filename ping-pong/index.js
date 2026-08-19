@@ -1,13 +1,32 @@
 const express = require("express");
+const path = require("path");
+const fs = require("fs");
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-var counter = 0;
+const directory = path.join("/", "usr", "src", "app", "files");
+const filePath = path.join(directory, "pong.txt");
+
+fs.mkdirSync(directory, { recursive: true });
+
+const getCounter = () => {
+  if (!fs.existsSync(filePath)) {
+    fs.writeFileSync(filePath, "0");
+    return 0;
+  }
+
+  return Number(fs.readFileSync(filePath, "utf8")) || 0;
+};
+
+const setCounter = (value) => {
+  fs.writeFileSync(filePath, String(value));
+};
 
 app.get("/pingpong", (_req, res) => {
-  counter += 1;
-  res.send(`pong ${counter}`);
+  const nextValue = getCounter() + 1;
+  setCounter(nextValue);
+  res.send(`pong ${nextValue}`);
 });
 
 app.listen(port, () => {

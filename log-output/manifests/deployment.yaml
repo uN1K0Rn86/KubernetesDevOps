@@ -14,15 +14,16 @@ spec:
     spec:
       volumes:
         - name: shared-log
-          emptyDir: {}
+          persistentVolumeClaim:
+            claimName: status-pong-claim
       containers:
         - name: log-output-logger
-          image: un1k0rn86/log-output-logger:1.10
+          image: un1k0rn86/log-output-logger:1.11
           volumeMounts:
             - name: shared-log
               mountPath: /usr/src/app/files
         - name: log-output-reader
-          image: un1k0rn86/log-output-reader:1.10.1
+          image: un1k0rn86/log-output-reader:1.11.1
           volumeMounts:
             - name: shared-log
               mountPath: /usr/src/app/files
