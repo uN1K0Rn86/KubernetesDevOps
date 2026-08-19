@@ -1,5 +1,5 @@
 {
-  "name": "log-output",
+  "name": "log-output-logger",
   "version": "1.0.0",
   "description": "",
   "license": "ISC",
@@ -8,9 +8,5 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
-  },
-  "dependencies": {
-    "dotenv": "^17.4.2",
-    "express": "^5.2.1"
   }
 }
