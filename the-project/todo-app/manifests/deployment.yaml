@@ -12,9 +12,16 @@ spec:
       labels:
         app: todo-app
     spec:
+      volumes:
+        - name: todo-app-vol
+          persistentVolumeClaim:
+            claimName: the-project-pv-claim
       containers:
-        - name: todo-app
-          image: un1k0rn86/todo-app:1.5
+        - name: todo-backend
+          image: un1k0rn86/todo-app:1.12.2
           env:
             - name: PORT
               value: "4344"
+          volumeMounts:
+            - name: todo-app-vol
+              mountPath: /usr/src/app/files

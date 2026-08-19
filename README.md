@@ -15,3 +15,4 @@
 - [1.11](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/1.11)
   - This exercise points to the repository root as major changes were made to both the log-output and ping-pong applications
   - Shared manifests (ingress and volumes) are in the [/manifests](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/1.11/manifests) folder under the repo root. Be sure to apply all manifests if testing.
+- [1.12](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/1.12/the-project)
