@@ -7,16 +7,14 @@ const port = process.env.PORT || 3000;
 
 const directory = path.join("/", "usr", "src", "app", "files");
 const filePath = path.join(directory, "log.txt");
-const pongFilePath = path.join(directory, "pong.txt");
 
-app.get("/status", (_req, res) => {
+app.get("/status", async (_req, res) => {
   const statusContent = fs.existsSync(filePath)
     ? fs.readFileSync(filePath, "utf8")
     : "File not found";
 
-  const pongContent = fs.existsSync(pongFilePath)
-    ? fs.readFileSync(pongFilePath, "utf8")
-    : "0";
+  const pongResponse = await fetch("http://ping-pong-backend-svc:1234/pings");
+  const pongContent = await pongResponse.text();
 
   const content = statusContent + "\n" + "Ping / pongs: " + pongContent;
 

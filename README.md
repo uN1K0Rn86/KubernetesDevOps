@@ -17,3 +17,6 @@
   - Shared manifests (ingress and volumes) are in the [/manifests](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/1.11/manifests) folder under the repo root. Be sure to apply all manifests if testing.
 - [1.12](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/1.12/the-project)
 - [1.13](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/1.13/the-project/todo-app)
+
+- [2.1](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/2.1)
+  - Changes made to both [log-output](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/2.1/log-output) and [ping-pong](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/2.1/ping-pong)

@@ -29,6 +29,11 @@ app.get("/pingpong", (_req, res) => {
   res.send(`pong ${nextValue}`);
 });
 
+app.get("/pings", (_req, res) => {
+  const pings = getCounter();
+  res.send(pings);
+});
+
 app.listen(port, () => {
   console.log(`Server started in port ${port}`);
 });
