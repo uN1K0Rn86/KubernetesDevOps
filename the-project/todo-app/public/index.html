@@ -1,9 +1,98 @@
 <!doctype html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Todo App</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 2rem;
+      }
+      main {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      form {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      input {
+        flex: 1;
+        padding: 0.5rem;
+      }
+      button {
+        padding: 0.5rem 1rem;
+      }
+      h1 {
+        text-align: center;
+      }
+      h2 {
+        text-align: center;
+      }
+      ul {
+        padding-left: 1.25rem;
+      }
+      img {
+        width: 400px;
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      .error {
+        color: red;
+        min-height: 1.25rem;
+      }
+      .image-wrapper {
+        display: flex;
+        justify-content: center;
+        margin: 1rem;
+      }
+    </style>
+  </head>
   <body>
     <main>
       <h1>Todo App</h1>
-      <img src="/random-image" alt="Random image" />
+      <div class="image-wrapper">
+        <img src="/random-image" alt="Random image" />
+      </div>
+
+      <form id="todo-form">
+        <input
+          id="todo-input"
+          type="text"
+          maxlength="140"
+          placeholder="Add a todo..."
+        />
+        <button type="submit">Send</button>
+      </form>
+
+      <div id="error-message" class="error"></div>
+
+      <h2>Todos</h2>
+
+      <ul id="todo-list"></ul>
     </main>
+
+    <script>
+      const todos = [
+        "Learn Kubernetes",
+        "Get a job",
+        "Refresh memory with webapps",
+      ];
+
+      const todoList = document.getElementById("todo-list");
+
+      const renderTodos = () => {
+        todoList.innerHTML = "";
+        todos.forEach((todo) => {
+          const li = document.createElement("li");
+          li.textContent = todo;
+          todoList.appendChild(li);
+        });
+      };
+
+      renderTodos();
+    </script>
   </body>
 </html>

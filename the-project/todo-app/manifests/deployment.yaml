@@ -17,8 +17,8 @@ spec:
           persistentVolumeClaim:
             claimName: the-project-pv-claim
       containers:
-        - name: todo-backend
-          image: un1k0rn86/todo-app:1.12.2
+        - name: todo-app
+          image: un1k0rn86/todo-app:1.13.3
           env:
             - name: PORT
               value: "4344"
