@@ -2,6 +2,8 @@
 
 ## Exercises
 
+### Chapter 2
+
 - [1.1](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/1.1/log-output)
 - [1.2](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/1.2/the-project)
 - [1.3](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/1.3/log-output)
@@ -18,5 +20,9 @@
 - [1.12](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/1.12/the-project)
 - [1.13](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/1.13/the-project/todo-app)
 
+### Chapter 3
+
 - [2.1](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/2.1)
   - Changes made to both [log-output](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/2.1/log-output) and [ping-pong](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/2.1/ping-pong)
+- [2.2](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/2.2/the-project)
+  - New service [todo-backend](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/2.2/the-project/todo-backend) added. Deploy both todo-app and todo-backend for functionality.

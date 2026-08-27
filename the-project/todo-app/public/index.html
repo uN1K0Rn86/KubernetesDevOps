@@ -75,24 +75,75 @@
     </main>
 
     <script>
-      const todos = [
-        "Learn Kubernetes",
-        "Get a job",
-        "Refresh memory with webapps",
-      ];
-
       const todoList = document.getElementById("todo-list");
+      const todoInput = document.getElementById("todo-input");
+      const errorMessage = document.getElementById("error-message");
+      const form = document.getElementById("todo-form");
 
-      const renderTodos = () => {
+      const renderTodos = (items) => {
         todoList.innerHTML = "";
-        todos.forEach((todo) => {
+
+        items.forEach((todo) => {
           const li = document.createElement("li");
-          li.textContent = todo;
+          li.textContent = typeof todo === "string" ? todo : todo.text;
           todoList.appendChild(li);
         });
       };
 
-      renderTodos();
+      const loadTodos = async () => {
+        try {
+          const res = await fetch("/todos");
+
+          if (!res.ok) {
+            throw new Error("Failed to fetch todos");
+          }
+
+          const items = await res.json();
+          renderTodos(items);
+        } catch (err) {
+          console.error(err);
+          todoList.innerHTML = "<li>Failed to load todos</li>";
+        }
+      };
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const value = todoInput.value.trim();
+        errorMessage.textContent = "";
+
+        if (!value) {
+          errorMessage.textContent = "Todo cannot be empty.";
+          return;
+        }
+
+        if (value.length > 140) {
+          errorMessage.textContent = "Todo must be 140 characters or fewer.";
+          return;
+        }
+
+        try {
+          const res = await fetch("/todos", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ text: value }),
+          });
+
+          if (!res.ok) {
+            throw new Error("Failed to create todo");
+          }
+
+          todoInput.value = "";
+          await loadTodos();
+        } catch (err) {
+          console.error(err);
+          errorMessage.textContent = "Could not create todo.";
+        }
+      });
+
+      loadTodos();
     </script>
   </body>
 </html>
