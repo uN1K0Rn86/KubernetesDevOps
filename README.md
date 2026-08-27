@@ -29,3 +29,4 @@
 - [2.3](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/2.3)
   - Changes made to manifests in [log-output](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/2.3/log-output) and [ping-pong](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/2.3/ping-pong)
 - [2.4](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/2.4/the-project)
+  - Delete all old deployments, services, and volumes and apply manifests again
