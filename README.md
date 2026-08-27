@@ -28,3 +28,4 @@
   - New service [todo-backend](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/2.2/the-project/todo-backend) added. Deploy both todo-app and todo-backend for functionality.
 - [2.3](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/2.3)
   - Changes made to manifests in [log-output](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/2.3/log-output) and [ping-pong](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/2.3/ping-pong)
+- [2.4](https://github.com/uN1K0Rn86/KubernetesDevOps/tree/2.4/the-project)
